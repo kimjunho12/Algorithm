@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.py": "python",
-        "deque": "cpp",
-        "string": "cpp",
-        "vector": "cpp",
-        "type_traits": "cpp"
-    }
-}
