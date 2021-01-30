@@ -21,19 +21,21 @@ void solution()
     string s;
 
     cin >> s;
-
     for (int i = 0; i < s.size(); i++)
     {
-        if((s[i]=='A'&&s[i+1]=='B')||(s[i]=='B'&&s[i+1]=='A')){
-            s.erase(s.begin()+i, s.begin()+i+2);
+        if ((s[i] == 'A' && s[i + 1] == 'B') || (s[i] == 'B' && s[i + 1] == 'A'))
+        {
+            s.erase(s.begin() + i, s.begin() + i + 2);
             i -= 2;
         }
-        else if((s[i]=='C'&&s[i+1]=='D')||(s[i]=='D'&&s[i+1]=='C')){
-            s.erase(s.begin()+i, s.begin()+i+2);
+        else if ((s[i] == 'C' && s[i + 1] == 'D') || (s[i] == 'D' && s[i + 1] == 'C'))
+        {
+            s.erase(s.begin() + i, s.begin() + i + 2);
             i -= 2;
         }
 
-        if(i==-2) i++;
+        if (i == -2)
+            i++;
     }
 
     cout << s;
