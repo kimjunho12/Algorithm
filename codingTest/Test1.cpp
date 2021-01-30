@@ -31,32 +31,25 @@ int solution()
     }
 
     string sa = to_string(a);
-    vector<int> ans;
+    string ans;
+    char l, r;
 
-    vector<int> sa1;
     for (int i = 0; i < sa.size() / 2; i++)
     {
-        sa1.push_back(sa[i]);
+        l = sa[i];
+        r = sa[sa.size() - 1 - i];
+        ans.push_back(l);
+        ans.push_back(r);
     }
-
-    vector<int> sa2;
-    for (int i = sa.size() - 1; i >= sa.size() / 2; i--)
+    if (sa.size() % 2 == 1)
     {
-        sa2.push_back(sa[i]);
+        ans.push_back(sa[sa.size() / 2]);
     }
 
-    for (int i = 0; i < sa1.size(); i++)
-    {
-        ans.push_back(sa1[i]);
-        ans.push_back(sa2[i]);
-    }
-    if (sa1.size() != sa2.size())
-        ans.push_back(sa2[sa2.size() - 1]);
+    int ians = atoi(ans.c_str());
+    printf("%d", ians);
 
-    for (int i = 0; i < ans.size(); i++)
-        printf("%c", ans[i]);
-
-    return 0;
+    return ians;
 }
 
 int main()
