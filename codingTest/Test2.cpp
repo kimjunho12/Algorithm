@@ -12,34 +12,34 @@
 // - 최적 알고리즘을 제출하면 추가 점수를 받을 수 있으며, 최적 알고리즘의 시간 복잡도는 O(N) 알고리즘입니다.
 
 #include <stdio.h>
-#include <string>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-void solution(){
+void solution()
+{
     string s;
 
     cin >> s;
 
-    vector<char> ans;
-
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 0; i < s.size(); i++)
     {
-        ans.push_back(s[i]);
-        printf("%c\n", s[i]);
-    }
-    
-    for (int i = 0; i < ans.size(); i++)
-    {
-        /* code */
-    }
-    
+        if((s[i]=='A'&&s[i+1]=='B')||(s[i]=='B'&&s[i+1]=='A')){
+            s.erase(s.begin()+i, s.begin()+i+2);
+            i -= 2;
+        }
+        else if((s[i]=='C'&&s[i+1]=='D')||(s[i]=='D'&&s[i+1]=='C')){
+            s.erase(s.begin()+i, s.begin()+i+2);
+            i -= 2;
+        }
 
-    printf("%s", s.c_str());
+        if(i==-2) i++;
+    }
+
+    cout << s;
 }
 
-int main(){
+int main()
+{
     solution();
 }
